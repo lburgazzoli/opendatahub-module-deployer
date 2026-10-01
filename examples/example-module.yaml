@@ -1,0 +1,19 @@
+apiVersion: deployer.opendatahub.io/v1alpha1
+kind: PlatformModuleConfig
+metadata:
+  name: example
+spec:
+  moduleRef:
+    apiVersion: example.opendatahub.io/v1
+    kind: ExampleModule
+    name: cluster
+  chart:
+    name: example-release
+    path: example
+  runlevel: 10
+  relatedImages:
+    - RELATED_IMAGE_FOO
+  config:
+    key: val
+  services:
+    - gatewayconfig
